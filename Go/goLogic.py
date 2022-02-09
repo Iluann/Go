@@ -7,6 +7,7 @@ class Board():
     ERRmovePlayerArgumentNotValid = "ERROR : Move: Player argument wasn't 1*-1."
     ERRsuicide = "ERROR : Suicidal Move"
     ERRKo = "Ko"
+    ERRwrongIndex = "ERROR : Invalid coordinates."
     Success = "Move successfully made."
     #------
     
@@ -46,6 +47,7 @@ class Board():
                         return True, self.Success
                     else: return False, self.ERRsuicide
                 else: return False, self.ERRinterOccupied
+        return False, self.ERRwrongIndex
 
     def isMoveLegal(self, x, y, lastInters, player):
         
